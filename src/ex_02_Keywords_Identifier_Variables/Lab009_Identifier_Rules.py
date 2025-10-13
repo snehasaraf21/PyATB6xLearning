@@ -1,0 +1,2 @@
+long_variable_name_is_printed_here = "Hello Sneha"
+print(long_variable_name_is_printed_here)

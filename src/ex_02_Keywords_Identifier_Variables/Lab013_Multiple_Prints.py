@@ -1,0 +1,1 @@
+print("sneha" , True , 12  , 5.44 , sep='*')

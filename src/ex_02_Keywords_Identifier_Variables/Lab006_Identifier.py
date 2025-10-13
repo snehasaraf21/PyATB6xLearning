@@ -8,8 +8,12 @@ print(_)
 _=_+1
 print(_)
 
-#123abc =9 not akllowed
+#123abc =9 not allowed# numeric-alpha is not a valid variable
+#alpha numeric like abc123 is a variable
 
 abc123="abc123"
 print(abc123)
+
+_sneha="Amit"
+print(type(_sneha))
 
