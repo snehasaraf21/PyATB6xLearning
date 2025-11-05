@@ -17,12 +17,19 @@ def type_of_triangle():
     side1 = float(input("Enter the side 1 of the triangle: "))
     side2 = float(input("Enter the side 2 of the triangle: "))
     side3 = float(input("Enter the side 3 of the triangle: "))
-    if side1 == side2 == side3:
-       print("Its a equilateral triangle")
-    elif side1 == side2 or side2 == side3 or side3 == side1:
-       print("Its a isosceles triangle")
+    if side1>0 and side2 > 0 and side3 > 0:
+        if side1+side2 > side3 and side1+side3 > side2 and side2+side3 > side1:
+           if side1 == side2 == side3:
+              print("Its a equilateral triangle")
+           elif side1 == side2 or side2 == side3 or side3 == side1:
+              print("Its a isosceles triangle")
+           else:
+              print("It s a scalene triangle")
+        else:
+            print("its not  triangle")
     else:
-       print("It s a scalene triangle")
+        print("invalid lenght of the triangle")
+
 
 
 type_of_triangle()
