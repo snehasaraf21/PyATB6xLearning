@@ -1,0 +1,30 @@
+class calc:
+    def __init__(self):
+        print("DC")
+
+    def sum(self,a,b):
+        return a+b
+
+    def sub(self,a,b):
+        return a-b
+
+    def mul(self,a,b):
+        return a*b
+
+    def div(self,a,b):
+        return a/b
+
+
+a= float(input("Enter the first number: "))
+b= float(input("Enter the second number: "))
+
+object_ref = calc()
+
+output_sum = object_ref.sum(a,b)
+print(output_sum)
+output_sub = object_ref.sub(a,b)
+print(output_sub)
+output_mul = object_ref.mul(a,b)
+print(output_mul)
+output_div = object_ref.div(a,b)
+print(output_div)
