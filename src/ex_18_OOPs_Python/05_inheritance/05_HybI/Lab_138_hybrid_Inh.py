@@ -1,0 +1,23 @@
+#hybrid inheritance is the ombination of ML,HI,MI
+class Base:
+    def base_method(self):
+        print("Base method")
+
+class A(Base):
+    def a_method(self):
+        print("A method")
+
+class B(Base):
+    def b_method(self):
+        print("B method")#this is hirearchial
+
+class C(A,B):#multiple inheretance
+    def c_method(self):
+        print("C method")
+
+
+obj=C()
+obj.base_method()
+obj.a_method()
+obj.b_method()
+obj.c_method()
