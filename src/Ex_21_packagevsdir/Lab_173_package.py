@@ -1,0 +1,4 @@
+from package import util_module
+import mymodule
+
+print(mymodule.Greet("Sneha"))
