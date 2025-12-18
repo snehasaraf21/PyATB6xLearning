@@ -1,9 +1,32 @@
 import pytest
-import allure
 import requests
+import allure
 
 base_url = "https://restful-booker.herokuapp.com"
 headers = {"Content-Type": "application/json"}
+
+def test_get():
+    response = requests.get(url=base_url)
+    assert response.status_code == 200
+
+def test_post():
+    base_path = "/booking"
+    full_url = base_url + base_path
+
+    payload = {
+        "firstname": "Jim",
+        "lastname": "Brown",
+        "totalprice": 111,
+        "depositpaid": True,
+        "bookingdates": {
+            "checkin": "2018-01-01",
+            "checkout": "2019-01-01"
+        },
+        "additionalneeds": "Breakfast"
+    }
+    response_data = requests.post(url=full_url, headers=headers, json=payload)
+    print(response_data.text)
+    assert response_data.status_code == 200
 
 
 def get_token():
@@ -45,7 +68,6 @@ def get_booking_id():
     booking_id = response_data_json["bookingid"]
     return booking_id
 
-
 def test_put():
     token = get_token()
     bookingid = get_booking_id()
@@ -76,8 +98,6 @@ def test_put():
     assert response.status_code == 200
     assert response.json()["firstname"] == "Pramod"
 
-
-
 def test_delete():
     URL = "https://restful-booker.herokuapp.com/booking/"
     booking_id = get_booking_id()
@@ -89,3 +109,7 @@ def test_delete():
     }
     response = requests.delete(url=DELETE_URL, headers=headers)
     assert response.status_code == 201
+
+
+
+
